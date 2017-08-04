@@ -13,6 +13,7 @@
 		101A266E1F34ABA6002397D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101A266C1F34ABA6002397D2 /* Main.storyboard */; };
 		101A26701F34ABA6002397D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101A266F1F34ABA6002397D2 /* Assets.xcassets */; };
 		101A26731F34ABA6002397D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101A26711F34ABA6002397D2 /* LaunchScreen.storyboard */; };
+		C872EEC6AA22EF025A642B4C /* libPods-VNGRSTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFFC68E3C927EBDA8B71BE5D /* libPods-VNGRSTwitter.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		101A266F1F34ABA6002397D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		101A26721F34ABA6002397D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		101A26741F34ABA6002397D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32BEF35DB4EAA443AA35966D /* Pods-VNGRSTwitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitter/Pods-VNGRSTwitter.release.xcconfig"; sourceTree = "<group>"; };
+		4DE94EE073300EC793C23215 /* Pods-VNGRSTwitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitter/Pods-VNGRSTwitter.debug.xcconfig"; sourceTree = "<group>"; };
+		FFFC68E3C927EBDA8B71BE5D /* libPods-VNGRSTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VNGRSTwitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C872EEC6AA22EF025A642B4C /* libPods-VNGRSTwitter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09FF58309E1ADD0274B478BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFFC68E3C927EBDA8B71BE5D /* libPods-VNGRSTwitter.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		101A26571F34ABA6002397D2 = {
 			isa = PBXGroup;
 			children = (
 				101A26621F34ABA6002397D2 /* VNGRSTwitter */,
 				101A26611F34ABA6002397D2 /* Products */,
+				1DB33F1D00577EC2C6454E7B /* Pods */,
+				09FF58309E1ADD0274B478BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +94,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1DB33F1D00577EC2C6454E7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DE94EE073300EC793C23215 /* Pods-VNGRSTwitter.debug.xcconfig */,
+				32BEF35DB4EAA443AA35966D /* Pods-VNGRSTwitter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 101A26771F34ABA6002397D2 /* Build configuration list for PBXNativeTarget "VNGRSTwitter" */;
 			buildPhases = (
+				05E8F9752C5223A76BFEA7E4 /* [CP] Check Pods Manifest.lock */,
 				101A265C1F34ABA6002397D2 /* Sources */,
 				101A265D1F34ABA6002397D2 /* Frameworks */,
 				101A265E1F34ABA6002397D2 /* Resources */,
+				F20AC95201A29C28B105A0ED /* [CP] Embed Pods Frameworks */,
+				C05F0DB06D3AFE08DC28D0A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05E8F9752C5223A76BFEA7E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C05F0DB06D3AFE08DC28D0A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitter/Pods-VNGRSTwitter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F20AC95201A29C28B105A0ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VNGRSTwitter/Pods-VNGRSTwitter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		101A265C1F34ABA6002397D2 /* Sources */ = {
@@ -270,6 +345,7 @@
 		};
 		101A26781F34ABA6002397D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DE94EE073300EC793C23215 /* Pods-VNGRSTwitter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VNGRSTwitter/Info.plist;
@@ -281,6 +357,7 @@
 		};
 		101A26791F34ABA6002397D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32BEF35DB4EAA443AA35966D /* Pods-VNGRSTwitter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VNGRSTwitter/Info.plist;
