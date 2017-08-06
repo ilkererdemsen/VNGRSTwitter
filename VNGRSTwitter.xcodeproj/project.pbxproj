@@ -14,6 +14,12 @@
 		101A26701F34ABA6002397D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101A266F1F34ABA6002397D2 /* Assets.xcassets */; };
 		101A26731F34ABA6002397D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101A26711F34ABA6002397D2 /* LaunchScreen.storyboard */; };
 		C872EEC6AA22EF025A642B4C /* libPods-VNGRSTwitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFFC68E3C927EBDA8B71BE5D /* libPods-VNGRSTwitter.a */; };
+		E8F513371F361509008357CB /* RemoteAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F513361F361509008357CB /* RemoteAction.m */; };
+		E8F5133D1F374AE6008357CB /* Tweets.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F5133C1F374AE6008357CB /* Tweets.m */; };
+		E8F513421F374EE4008357CB /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F513401F374EE4008357CB /* Tweet.m */; };
+		E8F5134B1F378440008357CB /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F5134A1F378440008357CB /* ImageCell.m */; };
+		E8F5134E1F378450008357CB /* StandardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F5134D1F378450008357CB /* StandardCell.m */; };
+		E8F513511F37BB58008357CB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F513501F37BB58008357CB /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,18 @@
 		101A26741F34ABA6002397D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32BEF35DB4EAA443AA35966D /* Pods-VNGRSTwitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitter/Pods-VNGRSTwitter.release.xcconfig"; sourceTree = "<group>"; };
 		4DE94EE073300EC793C23215 /* Pods-VNGRSTwitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRSTwitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRSTwitter/Pods-VNGRSTwitter.debug.xcconfig"; sourceTree = "<group>"; };
+		E8F513351F361509008357CB /* RemoteAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAction.h; sourceTree = "<group>"; };
+		E8F513361F361509008357CB /* RemoteAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteAction.m; sourceTree = "<group>"; };
+		E8F5133B1F374AE6008357CB /* Tweets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweets.h; sourceTree = "<group>"; };
+		E8F5133C1F374AE6008357CB /* Tweets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweets.m; sourceTree = "<group>"; };
+		E8F5133F1F374EE4008357CB /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		E8F513401F374EE4008357CB /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		E8F513491F378440008357CB /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		E8F5134A1F378440008357CB /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		E8F5134C1F378450008357CB /* StandardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardCell.h; sourceTree = "<group>"; };
+		E8F5134D1F378450008357CB /* StandardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardCell.m; sourceTree = "<group>"; };
+		E8F5134F1F37BB58008357CB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		E8F513501F37BB58008357CB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		FFFC68E3C927EBDA8B71BE5D /* libPods-VNGRSTwitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VNGRSTwitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -75,8 +93,9 @@
 			children = (
 				101A26661F34ABA6002397D2 /* AppDelegate.h */,
 				101A26671F34ABA6002397D2 /* AppDelegate.m */,
-				101A26691F34ABA6002397D2 /* ViewController.h */,
-				101A266A1F34ABA6002397D2 /* ViewController.m */,
+				E8F513481F378428008357CB /* Detail */,
+				E8F513471F378419008357CB /* Master */,
+				E8F513461F376749008357CB /* Models */,
 				101A266C1F34ABA6002397D2 /* Main.storyboard */,
 				101A266F1F34ABA6002397D2 /* Assets.xcassets */,
 				101A26711F34ABA6002397D2 /* LaunchScreen.storyboard */,
@@ -101,6 +120,41 @@
 				32BEF35DB4EAA443AA35966D /* Pods-VNGRSTwitter.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E8F513461F376749008357CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8F513351F361509008357CB /* RemoteAction.h */,
+				E8F513361F361509008357CB /* RemoteAction.m */,
+				E8F5133B1F374AE6008357CB /* Tweets.h */,
+				E8F5133C1F374AE6008357CB /* Tweets.m */,
+				E8F5133F1F374EE4008357CB /* Tweet.h */,
+				E8F513401F374EE4008357CB /* Tweet.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E8F513471F378419008357CB /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				101A26691F34ABA6002397D2 /* ViewController.h */,
+				101A266A1F34ABA6002397D2 /* ViewController.m */,
+				E8F5134C1F378450008357CB /* StandardCell.h */,
+				E8F5134D1F378450008357CB /* StandardCell.m */,
+				E8F513491F378440008357CB /* ImageCell.h */,
+				E8F5134A1F378440008357CB /* ImageCell.m */,
+			);
+			name = Master;
+			sourceTree = "<group>";
+		};
+		E8F513481F378428008357CB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E8F5134F1F37BB58008357CB /* DetailViewController.h */,
+				E8F513501F37BB58008357CB /* DetailViewController.m */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +239,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C05F0DB06D3AFE08DC28D0A7 /* [CP] Copy Pods Resources */ = {
@@ -227,7 +281,13 @@
 			files = (
 				101A266B1F34ABA6002397D2 /* ViewController.m in Sources */,
 				101A26681F34ABA6002397D2 /* AppDelegate.m in Sources */,
+				E8F513511F37BB58008357CB /* DetailViewController.m in Sources */,
+				E8F5134E1F378450008357CB /* StandardCell.m in Sources */,
+				E8F513421F374EE4008357CB /* Tweet.m in Sources */,
+				E8F5134B1F378440008357CB /* ImageCell.m in Sources */,
+				E8F5133D1F374AE6008357CB /* Tweets.m in Sources */,
 				101A26651F34ABA6002397D2 /* main.m in Sources */,
+				E8F513371F361509008357CB /* RemoteAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +446,7 @@
 				101A26791F34ABA6002397D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

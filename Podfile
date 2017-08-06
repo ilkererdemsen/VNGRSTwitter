@@ -2,8 +2,10 @@
 # platform :ios, '9.0'
 
 target 'VNGRSTwitter' do
- pod 'TwitterKit'
-pod 'AFNetworking', '~> 3.0'
+pod 'JSONModel', '~> 1.7'
 pod 'SDWebImage', '~> 4.0'
+pod 'Fabric'
+pod 'TwitterKit'
+pod 'TwitterCore'
 
 end
