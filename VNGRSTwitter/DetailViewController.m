@@ -49,7 +49,19 @@
     self.likeCountLabel.text = [NSString stringWithFormat:@"%lld Favourite",self.tweet.favorite_count];
     self.commentCountLabel.text = [NSString stringWithFormat:@"%lu Contributors",(unsigned long)(self.tweet.contributors ? [self.tweet.contributors count]:0)];
     self.tweetTextLabel.text = self.tweet.text;
+    self.dateLabel.text = [self formattedDate:self.tweet.created_at];
 }
 
+-(NSString *)formattedDate:(NSString *)stringDate {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
+
+    NSDate *date = [dateFormat dateFromString:stringDate];
+    
+    [dateFormat setDateFormat:@"dd/MM/yyyy HH:mm"];
+    return  [NSString stringWithFormat:@"%@",[dateFormat stringFromDate:date]];
+    
+    
+}
 
 @end

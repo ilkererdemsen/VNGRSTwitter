@@ -45,6 +45,7 @@
 @property(nonatomic,copy)NSString *source;
 @property(nonatomic,strong)User *user;
 @property(nonatomic,strong)NSArray<Optional> *contributors;
+
 @end
 
  
