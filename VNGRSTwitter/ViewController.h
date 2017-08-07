@@ -6,10 +6,10 @@
 //  Copyright © 2017 Erdem ilker Sen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "Tweets.h"
+
+#import "BaseViewController.h"
 #import "DetailViewController.h"
-@interface ViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface ViewController : BaseViewController <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property(nonatomic,weak) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;

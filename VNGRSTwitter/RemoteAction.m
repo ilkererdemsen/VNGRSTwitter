@@ -51,7 +51,7 @@
     if (metadata) {
         strURL = [NSString stringWithFormat:@"%@%@",RemoteURLString,type==0 ?metadata.refresh_url : metadata.next_results];
     } else {
-    strURL = [NSString stringWithFormat:@"%@%@",RemoteURLString,strSearch];
+        strURL = [NSString stringWithFormat:@"%@%@",RemoteURLString,strSearch];
     }
     
     NSDictionary *params = @{};
@@ -70,9 +70,7 @@
                                 NSLog(@"Error: %@", connectionError);
                             }
                         }];
-    }
-    
-    
+    }    
 }
 
 -(void)tweetDetail:(NSString *)tweetId

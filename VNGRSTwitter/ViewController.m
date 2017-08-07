@@ -7,38 +7,36 @@
 //
 
 #import "ViewController.h"
-#import "RemoteAction.h"
-#import "StandardCell.h"
-#import "ImageCell.h"
-#import <UIImageView+WebCache.h>
+
 
 @interface ViewController ()
-
+@property(nonatomic)BOOL isProcessing;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    // Do any additional setup after loading the view, typically from a nib.
+     
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self loadDataWithMetadata:self.metaData withType:0];
-    
+    if (self.metaData) {
+        [self loadDataWithMetadata:self.metaData withType:0];
+    }
 }
 -(NSMutableArray *)tweets {
     if (!_tweets) {
         _tweets = [NSMutableArray array];
     }
-     return _tweets;
+    return _tweets;
 }
 
 - (IBAction)searchTweets:(id)sender {
     self.searchText = self.searchTextField.text;
+    self.tweets = nil;
+    self.metaData = nil;
     [self loadDataWithMetadata:self.metaData withType:0];
     
 }
@@ -46,22 +44,27 @@
 
 -(void)loadDataWithMetadata:(SearchMetadata *)data
                    withType:(int)type{
-        [[RemoteAction sharedManager] searchTweets:self.searchTextField.text
-                                          metaData:self.metaData
-                                              type:type
-                                           success:^(Tweets *response) {
-                                               if (type == 0) {
-                                                   NSMutableArray *tempArray= [response.statuses mutableCopy];
-                                                   [tempArray addObjectsFromArray:self.tweets];
-                                                   self.tweets = tempArray;
-                                               } else {
-                                                   [self.tweets addObjectsFromArray:response.statuses];
-                                               }
-                                               self.metaData = response.search_metadata;
-                                               [self.tableView reloadData];
-                                           } failure:^(NSError *error) {
-            
-                                           }];
+    if (self.isProcessing) {
+        return;
+    }
+    self.isProcessing = YES;
+    [[RemoteAction sharedManager] searchTweets:self.searchTextField.text
+                                      metaData:self.metaData
+                                          type:type
+                                       success:^(Tweets *response) {
+                                           self.isProcessing = NO;
+                                           if (type == 0) {
+                                               NSMutableArray *tempArray= [response.statuses mutableCopy];
+                                               [tempArray addObjectsFromArray:self.tweets];
+                                               self.tweets = tempArray;
+                                           } else {
+                                               [self.tweets addObjectsFromArray:response.statuses];
+                                           }
+                                           self.metaData = response.search_metadata;
+                                           [self.tableView reloadData];
+                                       } failure:^(NSError *error) {
+                                           self.isProcessing = NO;
+                                       }];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -102,7 +105,7 @@
         return cell;
     }
     
-
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,7 +114,7 @@
     detail.tweet = tweet;
     [self.navigationController pushViewController:detail animated:YES];
     
-
+    
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     

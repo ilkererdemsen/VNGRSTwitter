@@ -9,18 +9,16 @@
 #import "Tweet.h"
 
 @implementation Tweet
-
 @end
 
 @implementation Mentions
-
 @end
+
 @implementation Entities
-
 @end
+
 @implementation User
-
 @end
-@implementation Media
 
+@implementation Media
 @end

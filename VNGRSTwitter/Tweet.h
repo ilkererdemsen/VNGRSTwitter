@@ -40,11 +40,11 @@
 
 @property(nonatomic,copy)NSString *created_at;
 @property(nonatomic,strong)Entities *entities;
-@property(nonatomic,copy)NSNumber *favorite_count;
-@property(nonatomic,strong)NSNumber *retweet_count;
+@property(nonatomic)long long favorite_count;
+@property(nonatomic)long long retweet_count;
 @property(nonatomic,copy)NSString *source;
- @property(nonatomic,strong)User *user;
-
+@property(nonatomic,strong)User *user;
+@property(nonatomic,strong)NSArray<Optional> *contributors;
 @end
 
  
